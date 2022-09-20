@@ -1,0 +1,19 @@
+class Player:
+    def __init__(self, name: str, sprint: int, dribble: int, passing: int, shooting: int):
+        self.name = name
+        self.__sprint = sprint
+        self.__dribble = dribble
+        self.__passing = passing
+        self.__shooting = shooting
+
+    @property
+    def name(self):
+        return self.___name
+
+    @name.setter
+    def name(self, value):
+        self.___name = value
+
+    def __str__(self):
+        return f'Player: {self.___name}\nSprint: {self.__sprint}\n' \
+               f'Dribble: {self.__dribble}\nPassing: {self.__passing}\nShooting: {self.__shooting}'
