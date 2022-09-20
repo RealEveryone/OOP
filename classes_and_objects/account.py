@@ -1,0 +1,29 @@
+class Account:
+    def __init__(self, id, name, balance=0):
+        self.id = id
+        self.name = name
+        self.balance = balance
+
+    def current_balance(self):
+        return self.balance
+
+    def credit(self, amount):
+        self.balance += amount
+        return self.current_balance()
+
+    def debit(self, amount):
+        if self.balance < amount:
+            return 'Amount exceeded balance'
+        self.balance -= amount
+        return self.current_balance()
+
+    def info(self):
+        output = f'User {self.name} with account {self.id} has {self.balance} balance'
+        return output
+
+
+account = Account(5411256, "Peter")
+print(account.debit(500))
+print(account.credit(1000))
+print(account.debit(500))
+print(account.info())
